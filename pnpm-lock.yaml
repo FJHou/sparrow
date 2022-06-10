@@ -6,8 +6,12 @@ specifiers:
   '@babel/preset-env': ^7.18.2
   '@commitlint/cli': ^17.0.1
   '@commitlint/config-conventional': ^17.0.0
+  '@rollup/plugin-alias': ^3.1.9
   '@rollup/plugin-babel': ^5.3.1
   '@rollup/plugin-node-resolve': ^13.3.0
+  '@rollup/plugin-typescript': ^8.3.2
+  '@types/jest': 24.0.0
+  babel-jest: 24.0.0
   cross-env: ^7.0.3
   eslint: ^7.32.0 || ^8.2.0
   eslint-config-airbnb-base: ^15.0.0
@@ -22,6 +26,9 @@ specifiers:
   prettier: ^2.6.2
   rimraf: ^3.0.2
   rollup: ^2.75.3
+  ts-jest: ^24.3.0
+  tslib: ^2.4.0
+  typescript: ^4.7.3
 
 devDependencies:
   '@babel/cli': 7.17.10_@babel+core@7.18.2
@@ -29,8 +36,12 @@ devDependencies:
   '@babel/preset-env': 7.18.2_@babel+core@7.18.2
   '@commitlint/cli': 17.0.1
   '@commitlint/config-conventional': 17.0.0
+  '@rollup/plugin-alias': 3.1.9_rollup@2.75.3
   '@rollup/plugin-babel': 5.3.1_@babel+core@7.18.2+rollup@2.75.3
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.75.3
+  '@rollup/plugin-typescript': 8.3.2_6560adaa00a5b531e31a843846a38e0f
+  '@types/jest': 24.0.0
+  babel-jest: 24.0.0_@babel+core@7.18.2
   cross-env: 7.0.3
   eslint: 8.16.0
   eslint-config-airbnb-base: 15.0.0_0ce4f552c18297c00de8a172104cf37a
@@ -45,6 +56,9 @@ devDependencies:
   prettier: 2.6.2
   rimraf: 3.0.2
   rollup: 2.75.3
+  ts-jest: 24.3.0_jest@24.0.0
+  tslib: 2.4.0
+  typescript: 4.7.3
 
 packages:
 
@@ -1298,10 +1312,10 @@ packages:
       '@types/node': 12.20.52
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.1_f090b5b66038a4e8e18bd61e707e87f2
+      cosmiconfig-typescript-loader: 2.0.1_e0e13a7d9a2fa1dcf51a2381f75a37fd
       lodash: 4.17.21
       resolve-from: 5.0.0
-      typescript: 4.7.2
+      typescript: 4.7.3
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -1639,6 +1653,16 @@ packages:
     dev: true
     optional: true
 
+  /@rollup/plugin-alias/3.1.9_rollup@2.75.3:
+    resolution: {integrity: sha1-pdJnVI/khEHzS+gyP7ZNHUobP98=, tarball: '@rollup/plugin-alias/download/@rollup/plugin-alias-3.1.9.tgz'}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    dependencies:
+      rollup: 2.75.3
+      slash: 3.0.0
+    dev: true
+
   /@rollup/plugin-babel/5.3.1_@babel+core@7.18.2+rollup@2.75.3:
     resolution: {integrity: sha1-BLwGCPSqSy5LGuvyhDRND2j9ooM=, tarball: '@rollup/plugin-babel/download/@rollup/plugin-babel-5.3.1.tgz'}
     engines: {node: '>= 10.0.0'}
@@ -1669,6 +1693,21 @@ packages:
       is-module: 1.0.0
       resolve: 1.22.0
       rollup: 2.75.3
+    dev: true
+
+  /@rollup/plugin-typescript/8.3.2_6560adaa00a5b531e31a843846a38e0f:
+    resolution: {integrity: sha1-4bcZ4u0+dSu8CSABZWxIN48tFfA=, tarball: '@rollup/plugin-typescript/download/@rollup/plugin-typescript-8.3.2.tgz'}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      rollup: ^2.14.0
+      tslib: '*'
+      typescript: '>=3.7.0'
+    dependencies:
+      '@rollup/pluginutils': 3.1.0_rollup@2.75.3
+      resolve: 1.22.0
+      rollup: 2.75.3
+      tslib: 2.4.0
+      typescript: 4.7.3
     dev: true
 
   /@rollup/pluginutils/3.1.0_rollup@2.75.3:
@@ -1759,6 +1798,10 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-lib-report': 3.0.0
+    dev: true
+
+  /@types/jest/24.0.0:
+    resolution: {integrity: sha1-hISSAmwyezVI2SvgNSpUXDaiHoo=, tarball: '@types/jest/download/@types/jest-24.0.0.tgz'}
     dev: true
 
   /@types/json5/0.0.29:
@@ -2061,6 +2104,19 @@ packages:
     resolution: {integrity: sha1-1h9G2DslGSUOJ4Ta9bCUeai0HFk=, tarball: aws4/download/aws4-1.11.0.tgz}
     dev: true
 
+  /babel-jest/24.0.0_@babel+core@7.18.2:
+    resolution: {integrity: sha1-igx2fwP0pZX7khr9qxP/Em7dANo=, tarball: babel-jest/download/babel-jest-24.0.0.tgz}
+    engines: {node: '>= 6'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.18.2
+      babel-plugin-istanbul: 5.2.0
+      babel-preset-jest: 24.9.0_@babel+core@7.18.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /babel-jest/24.9.0_@babel+core@7.18.2:
     resolution: {integrity: sha1-P8Mny4RnuJ0U17xw4xUQSng8zVQ=, tarball: babel-jest/download/babel-jest-24.9.0.tgz}
     engines: {node: '>= 6'}
@@ -2244,6 +2300,13 @@ packages:
       picocolors: 1.0.0
     dev: true
 
+  /bs-logger/0.2.6:
+    resolution: {integrity: sha1-6302UwenLPl0zGzadraDVK0za9g=, tarball: bs-logger/download/bs-logger-0.2.6.tgz}
+    engines: {node: '>= 6'}
+    dependencies:
+      fast-json-stable-stringify: 2.1.0
+    dev: true
+
   /bser/2.1.1:
     resolution: {integrity: sha1-5nh9og7OnQeZhTPP2d5vXDj0vAU=, tarball: bser/download/bser-2.1.1.tgz}
     dependencies:
@@ -2310,6 +2373,11 @@ packages:
       camelcase: 5.3.1
       map-obj: 4.3.0
       quick-lru: 4.0.1
+    dev: true
+
+  /camelcase/4.1.0:
+    resolution: {integrity: sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=, tarball: camelcase/download/camelcase-4.1.0.tgz}
+    engines: {node: '>=4'}
     dev: true
 
   /camelcase/5.3.1:
@@ -2578,7 +2646,7 @@ packages:
     resolution: {integrity: sha1-pgQtNjTCsn6TKPg3uWX6yDgI24U=, tarball: core-util-is/download/core-util-is-1.0.3.tgz}
     dev: true
 
-  /cosmiconfig-typescript-loader/2.0.1_f090b5b66038a4e8e18bd61e707e87f2:
+  /cosmiconfig-typescript-loader/2.0.1_e0e13a7d9a2fa1dcf51a2381f75a37fd:
     resolution: {integrity: sha1-ViK7Hrh9KTVwvMOlf0BpQOCWARM=, tarball: cosmiconfig-typescript-loader/download/cosmiconfig-typescript-loader-2.0.1.tgz}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -2587,8 +2655,8 @@ packages:
     dependencies:
       '@types/node': 12.20.52
       cosmiconfig: 7.0.1
-      ts-node: 10.8.0_f090b5b66038a4e8e18bd61e707e87f2
-      typescript: 4.7.2
+      ts-node: 10.8.0_e0e13a7d9a2fa1dcf51a2381f75a37fd
+      typescript: 4.7.3
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -4869,6 +4937,10 @@ packages:
     resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=, tarball: lodash.debounce/download/lodash.debounce-4.0.8.tgz}
     dev: true
 
+  /lodash.memoize/4.1.2:
+    resolution: {integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=, tarball: lodash.memoize/download/lodash.memoize-4.1.2.tgz}
+    dev: true
+
   /lodash.merge/4.6.2:
     resolution: {integrity: sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=, tarball: lodash.merge/download/lodash.merge-4.6.2.tgz}
     dev: true
@@ -6118,6 +6190,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /slash/3.0.0:
+    resolution: {integrity: sha1-ZTm+hwwWWtvVJAIg2+Nh8bxNRjQ=, tarball: slash/download/slash-3.0.0.tgz}
+    engines: {node: '>=8'}
+    dev: true
+
   /slice-ansi/3.0.0:
     resolution: {integrity: sha1-Md3BCTCht+C2ewjJbC9Jt3p4l4c=, tarball: slice-ansi/download/slice-ansi-3.0.0.tgz}
     engines: {node: '>=8'}
@@ -6555,7 +6632,27 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.8.0_f090b5b66038a4e8e18bd61e707e87f2:
+  /ts-jest/24.3.0_jest@24.0.0:
+    resolution: {integrity: sha1-uXgU4+qzWeqEChrBEt6uaKpECGk=, tarball: ts-jest/download/ts-jest-24.3.0.tgz}
+    engines: {node: '>= 6'}
+    hasBin: true
+    peerDependencies:
+      jest: '>=24 <25'
+    dependencies:
+      bs-logger: 0.2.6
+      buffer-from: 1.1.2
+      fast-json-stable-stringify: 2.1.0
+      jest: 24.0.0
+      json5: 2.2.1
+      lodash.memoize: 4.1.2
+      make-error: 1.3.6
+      mkdirp: 0.5.6
+      resolve: 1.22.0
+      semver: 5.7.1
+      yargs-parser: 10.1.0
+    dev: true
+
+  /ts-node/10.8.0_e0e13a7d9a2fa1dcf51a2381f75a37fd:
     resolution: {integrity: sha1-POtaw+Z66AJcGVBiaq+97LVdgs4=, tarball: ts-node/download/ts-node-10.8.0.tgz}
     hasBin: true
     peerDependencies:
@@ -6581,7 +6678,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.7.2
+      typescript: 4.7.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -6668,8 +6765,8 @@ packages:
     resolution: {integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=, tarball: typedarray/download/typedarray-0.0.6.tgz}
     dev: true
 
-  /typescript/4.7.2:
-    resolution: {integrity: sha1-H5qizrmvh8yiJ4E7QxD/8LUVk8Q=, tarball: typescript/download/typescript-4.7.2.tgz}
+  /typescript/4.7.3:
+    resolution: {integrity: sha1-g2S1AtUle1QPneTEC+hMmOI6Ep0=, tarball: typescript/download/typescript-4.7.3.tgz}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
@@ -6942,6 +7039,12 @@ packages:
   /yaml/1.10.2:
     resolution: {integrity: sha1-IwHF/78StGfejaIzOkWeKeeSDks=, tarball: yaml/download/yaml-1.10.2.tgz}
     engines: {node: '>= 6'}
+    dev: true
+
+  /yargs-parser/10.1.0:
+    resolution: {integrity: sha1-cgImW4n36eny5XZeD+c1qQXtuqg=, tarball: yargs-parser/download/yargs-parser-10.1.0.tgz}
+    dependencies:
+      camelcase: 4.1.0
     dev: true
 
   /yargs-parser/13.1.2:
